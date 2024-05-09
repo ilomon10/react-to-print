@@ -143,6 +143,7 @@ export class ReactToPrint extends React.Component<IReactToPrintProps> {
             fonts,
             pageStyle,
             nonce,
+            srcdoc,
         } = this.props;
 
         let contentEl = typeof optionalContent === "function" ? optionalContent() : null;
@@ -174,7 +175,7 @@ export class ReactToPrint extends React.Component<IReactToPrintProps> {
         printWindow.id = "printWindow";
         // Ensure we set a DOCTYPE on the iframe's document
         // https://github.com/MatthewHerbst/react-to-print/issues/459
-        printWindow.srcdoc = "<!DOCTYPE html>";
+        printWindow.srcdoc = srcdoc || "<!DOCTYPE html>";
 
         const contentNodes = findDOMNode(contentEl);
 

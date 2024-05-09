@@ -43,4 +43,8 @@ export interface IReactToPrintProps {
     suppressErrors?: boolean;
     /** Trigger action used to open browser print */
     trigger?: <T>() => React.ReactElement<ITriggerProps<T>>;
+    /**
+     *  default <!DOCTYPE html>
+     */
+    srcdoc?: string;
 }
